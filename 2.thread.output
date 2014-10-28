@@ -1,0 +1,31 @@
+Memcache client benchmark, JRuby[1.9, universal-java1.7, darwin]
+2 threads
+                                     user     system      total        real
+set_str:
+  spymemcached.jruby            12.580000  10.280000  22.860000 ( 12.635000)
+  jruby-memcached               20.360000  10.480000  30.840000 ( 17.525000)
+  dalli                         26.900000   9.510000  36.410000 ( 15.734000)
+get_str:
+  dalli                         21.590000  10.370000  31.960000 ( 15.176000)
+  jruby-memcached               10.840000   9.880000  20.720000 ( 12.222000)
+  spymemcached.jruby             8.100000   9.810000  17.910000 ( 11.176000)
+set_obj:
+  dalli                         20.510000   9.250000  29.760000 ( 14.613000)
+  spymemcached.jruby             9.230000  10.000000  19.230000 ( 12.024000)
+  jruby-memcached               19.580000  10.460000  30.040000 ( 17.399000)
+get_obj:
+  spymemcached.jruby             8.150000   9.780000  17.930000 ( 11.303000)
+  dalli                         19.430000  10.010000  29.440000 ( 14.710000)
+  jruby-memcached                9.610000   9.790000  19.400000 ( 11.954000)
+multiget:
+  dalli                         18.300000   3.640000  21.940000 (  8.945000)
+  spymemcached.jruby             6.700000   3.360000  10.060000 (  4.615000)
+  jruby-memcached                5.150000   3.210000   8.360000 (  4.367000)
+missing:
+  jruby-memcached               26.250000  10.460000  36.710000 ( 20.232000)
+  spymemcached.jruby             8.090000   9.770000  17.860000 ( 11.179000)
+  dalli                         19.700000  10.060000  29.760000 ( 14.610000)
+mixed:
+  jruby-memcached               30.940000  20.570000  51.510000 ( 30.337000)
+  dalli                         41.190000  19.110000  60.300000 ( 30.076000)
+  spymemcached.jruby            18.560000  19.970000  38.530000 ( 24.246000)

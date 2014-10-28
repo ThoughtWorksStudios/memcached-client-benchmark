@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    dalli (2.7.2)
+    jruby-memcached-thoughtworks (0.6.0)
+
+PLATFORMS
+  java
+
+DEPENDENCIES
+  dalli
+  jruby-memcached-thoughtworks
