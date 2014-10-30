@@ -3,7 +3,7 @@ GEM
   specs:
     dalli (2.7.2)
     jruby-memcached-thoughtworks (0.6.0)
-    spymemcached.jruby (1.0.3-java)
+    spymemcached.jruby (1.0.7-java)
 
 PLATFORMS
   java
