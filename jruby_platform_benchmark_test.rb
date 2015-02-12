@@ -124,19 +124,20 @@ puts "#{threads.size} threads"
   })
 end
 
+names = ['spymemcached.jruby', 'jruby-memcached', 'dalli']
 clients = {
   'dalli' => @dalli,
   'spymemcached.jruby' => @spy,
   'jruby-memcached' => @memcached
-}.to_a
+}
 
 Benchmark.bm(30) do |x|
   n = 25000
   [:set_str, :get_str, :set_obj, :get_obj, :multiget, :missing, :mixed].each do |m|
     puts "#{m}:"
-    clients.shuffle.each do |name, clients|
+    names.each do |name|
       x.report("  #{name}") do
-        ts = clients.map do |client|
+        ts = clients[name].map do |client|
           Thread.start do
             send(m, client, n)
           end
@@ -146,3 +147,4 @@ Benchmark.bm(30) do |x|
     end
   end
 end
+
